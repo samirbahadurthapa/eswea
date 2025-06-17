@@ -10,33 +10,38 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final List<Map<String, dynamic>> items = [
-    {'icon': Icons.phone_android, 'label': 'Topup & Data'},
-    {'icon': Icons.lightbulb, 'label': 'Electricity'},
-    {'icon': Icons.water, 'label': 'Water'},
-    {'icon': Icons.wifi, 'label': 'Internet'},
-    {'icon': FontAwesomeIcons.buildingColumns, 'label': 'Gov.Payment'},
-    {'icon': Icons.tv, 'label': 'TV'},
-    {'icon': Icons.school, 'label': 'Education Fee'},
+    {'image': "assets/images/mobile.png", 'label': 'Topup\n&Data'},
+    {'image': "assets/images/technology.png", 'label': 'Electricity'},
+    {'image': "assets/images/tap.png", 'label': 'Water'},
+    {'image': "assets/images/internet.png", 'label': 'Internet'},
+    {'image': "assets/images/Govt.payment.png", 'label': 'Govt.\n&Payment'},
+    {
+      'image': "assets/images/traffic-light.png",
+      'label': 'Traffic Fine \n payment',
+    },
+    {'image': "assets/images/graduation.png", 'label': 'Education \n Fee'}, 
+    {'image':"assets/images/back.png",'label':""}
   ];
   final List<Map<String, dynamic>> newItems = [
-    {'icon': Icons.flight, 'label': 'Airlines'},
-    {'icon': Icons.public, 'label': 'Intl Airlines'},
-    {'icon': Icons.hotel, 'label': 'Hotels'},
-    {'icon': Icons.directions_bus, 'label': 'Bus Tickets'},
-    {'icon': Icons.how_to_vote, 'label': 'Voting'},
+    {'image': "assets/images/airplane.png", 'label': 'Airlines'},
+    {'image': "assets/images/international.png", 'label': 'Intl Airlines'},
+    {'image': "assets/images/hotel.png", 'label': 'Hotels'},
+    {'image': "assets/images/bus.png", 'label': 'Bus Tickets'},
+    {'image': "assets/images/ballot.png", 'label': 'Voting'},
     {
-      'icon': FontAwesomeIcons.cableCar,
+      'image': "assets/images/cablecar.png",
       'label': 'Cable Car',
     }, // FontAwesome (v6+)
-    {'icon': Icons.event, 'label': 'Events'},
+    {'image': "assets/images/calendar.png", 'label': 'Events'},
   ];
   final List<Map<String, dynamic>> insurance = [
-    {'icon': Icons.support_agent, 'label': 'eSewa Care'},
-    {'icon': Icons.directions_car, 'label': 'Bluebook Renewal'},
-    {'icon': Icons.policy, 'label': 'Policy Renewal'},
-    {'icon': Icons.hearing, 'label': 'Hearing'},
+    {'image': "assets/images/healthcare.png", 'label': 'eSewa Care'},
+    {'image': "assets/images/book.png", 'label': 'Bluebook Renewal'},
+    {
+      'image': Image(image: AssetImage("assets/.png")),
+      'label': 'Policy Renewal',
+    },
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: double.infinity,
                 height: 190,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 5, 226, 27),
+                  color: Color.fromARGB(255, 22, 158, 36),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(45),
                     bottomRight: Radius.circular(45),
@@ -119,7 +124,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Icon(Icons.wallet),
+                                Image(
+                                  image: AssetImage("assets/wallet.png"),
+                                  height: 25,
+                                  width: 25,
+                                ),
                                 Padding(
                                   padding: const EdgeInsets.only(right: 30),
                                   child: Column(
@@ -128,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        "Npr 1,00,000",
+                                        "NPR 1,00,000",
                                         style: TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.w500,
@@ -150,7 +159,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Icon(Icons.military_tech),
+                                    Image(
+                                      image: AssetImage("assets/reward.png"),
+                                      height: 1,
+                                      width: 3,
+                                    ),
                                     SizedBox(width: 8),
                                     Column(
                                       mainAxisAlignment:
@@ -179,28 +192,51 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               Column(
                                 children: [
-                                  Icon(Icons.money),
-                                  Text("Send"),
+                                  Image.asset(
+                                    "assets/images/loadmoney.png",
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                  Text("load"),
                                   Text("Money"),
                                 ],
                               ),
                               Column(
                                 children: [
-                                  Icon(Icons.monetization_on),
+                                  Image.asset(
+                                    "assets/images/send-money.png",
+                                    height: 30,
+                                    width: 30,
+                                  ),
+
+                                  Text("Send"),
+                                  Text("Money"),
+                                  // Text("Transfer",style: TextStyle(fon),),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  // Icon(Icons.credit_card),
+                                  Image(
+                                    image: AssetImage(
+                                      "assets/images/banktransfer.png",
+                                    ),
+                                    height: 30,
+                                    width: 30,
+                                  ),
                                   Text("Bank"),
                                   Text("Transfer"),
                                 ],
                               ),
                               Column(
                                 children: [
-                                  Icon(Icons.credit_card),
-                                  Text("Card"),
-                                  Text("Payment"),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Icon(Icons.money_off),
+                                  Image(
+                                    image: AssetImage(
+                                      "assets/images/remittance.png",
+                                    ),
+                                    height: 30,
+                                    width: 30,
+                                  ),
                                   Text("Remittance"),
                                 ],
                               ),
@@ -212,7 +248,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(height: 10),
                   Container(
-                    height: 200,
+                    height: 250,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -240,19 +276,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                 SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 4,
                                   mainAxisSpacing: 1,
-                                  crossAxisSpacing: 10,
-                                  childAspectRatio: 2.5 / 2,
+                                  crossAxisSpacing: 11,
+                                  childAspectRatio: 0.9,
                                 ),
                             itemBuilder: (context, index) {
                               return Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(
-                                    items[index]['icon'],
-                                    size: 30,
-                                    color: Colors.black,
+                                  Image.asset(
+                                    items[index]["image"],
+                                    height: 30,
+                                    width: 30,
                                   ),
-                                  SizedBox(height: 10),
+                                  SizedBox(height: 3),
                                   Text(
                                     //      Text(
                                     //   insurance[index]['label'],
@@ -319,10 +355,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               return Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(
-                                    newItems[index]['icon'],
-                                    size: 30,
-                                    color: Colors.black,
+                                  Image.asset(
+                                    newItems[index]['image'],
+                                    height: 30,
+                                    width: 30,
                                   ),
                                   SizedBox(height: 5),
                                   Text(
@@ -340,7 +376,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(height: 10),
                   Container(
-                    height: 200,
+                    height: 150,
                     width: double.infinity,
 
                     decoration: BoxDecoration(
@@ -376,10 +412,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               return Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(
-                                    insurance[index]['icon'],
-                                    size: 30,
-                                    color: Colors.black,
+                                  Image.asset(
+                                    newItems[index]['image'],
+                                    height: 30,
+                                    width: 30,
                                   ),
                                   SizedBox(height: 5),
                                   Text(
